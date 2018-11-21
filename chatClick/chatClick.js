@@ -1,28 +1,30 @@
-(function(){
+waitForElements = window.setInterval(function(){
+    if(document.readyState==="complete"){
     try{
-        let ubemannet = "øyeblikket ubemannet"
-        let chatVindutekst = document.querySelector('[class="vngage-title"]').textContent
-        let chatKnapp = document.querySelector('[class="vngage-tab"]')
+        var ubemannet = "øyeblikket ubemannet"
+        var chatVindutekst = document.querySelector('[class="vngage-title"]').textContent
+        var chatKnapp = document.querySelector('[class="vngage-tab"]')
         
         if(chatVindutekst.includes(ubemannet)) {
-            bemanning = "ubemannet"
+            bemanning = "Ubemannet"
             }
         else {
-            bemanning = "bemannet"
+            bemanning = "Bemannet"
         }
         chatKnapp.addEventListener("click",function(){
             utag.link({
-            event_category: "chat",
-            event_action: "click",
+            event_category: "Chat",
+            event_action: "Click",
             event_label: bemanning,
             event_value: 0,
             })},            
         {once: true}
         )
     }
-    catch{
-        console.log("woops her haru bomma")
+    catch(error){
+        utag.DB("Error UID 154 ("+ error.name+ ":" + error.message +")")
 
     }
+    clearInterval(waitForElements);
 }
-    )(window)
+        },500);
