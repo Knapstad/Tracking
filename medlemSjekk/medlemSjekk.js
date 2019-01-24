@@ -9,8 +9,8 @@
  }
 
  try {
-   var current_style_medlem = document.querySelector('[src="/medlemsfordeler/medlemsjekk-hvit"]').contentWindow.document.querySelector('[id="isMember"]').style.display;
-   var current_style_ikkemedlem = document.querySelector('[src="/medlemsfordeler/medlemsjekk-hvit"]').contentWindow.document.querySelector('[id="isNotMember"]').style.display;
+   let current_style_medlem = document.querySelector('[src="/medlemsfordeler/medlemsjekk-hvit"]').contentWindow.document.querySelector('[id="isMember"]').style.display;
+   let current_style_ikkemedlem = document.querySelector('[src="/medlemsfordeler/medlemsjekk-hvit"]').contentWindow.document.querySelector('[id="isNotMember"]').style.display;
    if (current_style_medlem != "none") {
      window.clearInterval(medlemsjekk);
      utag.link({

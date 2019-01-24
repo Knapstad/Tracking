@@ -2,8 +2,7 @@
     var currentstep = ""
 
     function erLastet(){
-        if()
-            {return document.readyState === "complete"}
+        {return document.readyState === "complete"}
     }
     
     function erNyttStepp(){
@@ -54,3 +53,9 @@
  catch (error) {
     utag.DB("Error UID 152 " + "(" + error.name + ": " + error.message + ")"); 
     }
+
+
+
+
+
+
